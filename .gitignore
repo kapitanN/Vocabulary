@@ -1,0 +1,13 @@
+*.class
+.classpath
+.project
+/bin
+/.metadata
+/Servers
+/.settings
+/.RemoteSystemsTempFiles
+/.build
+/target
+/.idea
+/.sonar
+/.sonartmp
