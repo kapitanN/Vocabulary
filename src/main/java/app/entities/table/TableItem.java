@@ -4,10 +4,7 @@ import app.entities.beans.ForeignWord;
 import app.entities.beans.Translation;
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -18,6 +15,7 @@ import java.util.Date;
 @Table(name = "unit")
 public class TableItem {
     @Id
+    @Column(name = "unit_id")
     @GeneratedValue
     private Long id;
 

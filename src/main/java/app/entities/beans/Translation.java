@@ -1,10 +1,7 @@
 package app.entities.beans;
 
 import javax.annotation.Generated;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Vocabulary(v3)
@@ -15,6 +12,7 @@ import javax.persistence.Table;
 public class Translation {
 
     @Id
+    @Column(name = "tr_id")
     @GeneratedValue
     private Long id;
 
