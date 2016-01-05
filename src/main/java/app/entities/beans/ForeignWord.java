@@ -3,12 +3,14 @@ package app.entities.beans;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Vocabulary(v3)
  * Created by Родион on 29.11.2015.
  */
 @Entity
+@Table(name = "foreignwords")
 public class ForeignWord {
 
     @Id

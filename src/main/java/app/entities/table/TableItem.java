@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
@@ -14,6 +15,7 @@ import java.util.Date;
  * Created by Родион on 23.11.2015.
  */
 @Entity
+@Table(name = "unit")
 public class TableItem {
     @Id
     @GeneratedValue
