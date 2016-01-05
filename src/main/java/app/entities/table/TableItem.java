@@ -1,31 +1,42 @@
 package app.entities.table;
 
+import app.entities.beans.ForeignWord;
+import app.entities.beans.Translation;
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import java.util.Date;
 
 /**
  * Vocabulary(v3)
  * Created by Родион on 23.11.2015.
  */
+@Entity
 public class TableItem {
+    @Id
+    @GeneratedValue
     private long id;
-    private String originalWord;
-    private String translatedWord;
+    
+    private ForeignWord foreignWord;
+    private Translation translation;
     private Date lastModifiedDate;
     private Date dateOfCreation;
     private String category;
 
-    private TableItem(){}
+    private TableItem() {
+    }
 
     public long getId() {
         return id;
     }
 
-    public String getOriginalWord() {
-        return originalWord;
+    public ForeignWord getOriginalWord() {
+        return foreignWord;
     }
 
-    public String getTranslatedWord() {
-        return translatedWord;
+    public Translation getTranslatedWord() {
+        return translation;
     }
 
     public Date getLastModifiedDate() {
@@ -41,20 +52,21 @@ public class TableItem {
     }
 
     public class Builder {
-        private Builder(){}
+        private Builder() {
+        }
 
         public Builder setId(long id) {
             TableItem.this.id = id;
             return this;
         }
 
-        public Builder setOriginalWord(String originalWord) {
-            TableItem.this.originalWord = originalWord;
+        public Builder setOriginalWord(ForeignWord foreignWord) {
+            TableItem.this.foreignWord = foreignWord;
             return this;
         }
 
-        public Builder setTranslatedWord(String translatedWord) {
-            TableItem.this.translatedWord = translatedWord;
+        public Builder setTranslatedWord(Translation translation) {
+            TableItem.this.translation = translation;
             return this;
         }
 
