@@ -16,7 +16,9 @@ public class Translation {
     @GeneratedValue
     private Long id;
 
+    @Column(name = "tr_word")
     private String word;
+    @Column(name = "tr_language")
     private String language;
 
     public Translation() {
