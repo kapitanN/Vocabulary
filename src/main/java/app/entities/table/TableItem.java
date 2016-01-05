@@ -19,7 +19,7 @@ import java.util.Date;
 public class TableItem {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     @ManyToOne
     private ForeignWord foreignWord;

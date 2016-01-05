@@ -16,7 +16,7 @@ public class Translation {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     private String word;
     private String language;
