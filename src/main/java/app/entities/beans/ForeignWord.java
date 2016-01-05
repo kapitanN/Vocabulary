@@ -15,7 +15,9 @@ public class ForeignWord {
     @GeneratedValue
     private Long id;
 
+    @Column(name = "foreign_word")
     private String word;
+    @Column(name = "foreign_language")
     private String language;
 
     public ForeignWord() {}
