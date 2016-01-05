@@ -6,6 +6,7 @@ import org.springframework.data.annotation.Id;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 
 /**
@@ -17,8 +18,10 @@ public class TableItem {
     @Id
     @GeneratedValue
     private long id;
-    
+
+    @ManyToOne
     private ForeignWord foreignWord;
+    @ManyToOne
     private Translation translation;
     private Date lastModifiedDate;
     private Date dateOfCreation;
