@@ -1,13 +1,9 @@
 package app.db.util;
 
-import app.entities.beans.ForeignWord;
-import app.entities.beans.Translation;
-import app.entities.table.TableItem;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
-
-import javax.security.auth.login.Configuration;
-import java.io.File;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
 
 /**
  * Vocabulary(v3)
@@ -15,15 +11,18 @@ import java.io.File;
  */
 public class TableUtil {
     private static final SessionFactory sessionFactory = buildSessionFactory();
+    private static ServiceRegistry serviceRegistry;
 
     private static SessionFactory buildSessionFactory() {
         try {
-            // Create the SessionFactory from hibernate.cfg.xml
-            return new AnnotationConfiguration().configure(
-                    new File("hibernate.cgf.xml")).buildSessionFactory();
+            // Создает сессию с hibernate.cfg.xml
+            Configuration configuration = new Configuration();
+            configuration.configure();
+            serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
 
-        } catch (Throwable ex) {
-            // Make sure you log the exception, as it might be swallowed
+            return configuration.buildSessionFactory(serviceRegistry);
+        }
+        catch (Throwable ex) {
             System.err.println("Initial SessionFactory creation failed." + ex);
             throw new ExceptionInInitializerError(ex);
         }
@@ -34,7 +33,8 @@ public class TableUtil {
     }
 
     public static void shutdown() {
-        // Close caches and connection pools
+        // Чистит кеш и закрывает соединение с БД
         getSessionFactory().close();
     }
+
 }
