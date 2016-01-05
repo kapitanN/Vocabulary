@@ -17,10 +17,12 @@ public class ForeignWord {
 
     @Column(name = "foreign_word")
     private String word;
+
     @Column(name = "foreign_language")
     private String language;
 
-    public ForeignWord() {}
+    public ForeignWord() {
+    }
 
     public long getId() {
         return id;

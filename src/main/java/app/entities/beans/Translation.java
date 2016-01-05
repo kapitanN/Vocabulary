@@ -18,6 +18,7 @@ public class Translation {
 
     @Column(name = "tr_word")
     private String word;
+
     @Column(name = "tr_language")
     private String language;
 

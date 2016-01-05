@@ -20,11 +20,22 @@ public class TableItem {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "foreign_id")
     private ForeignWord foreignWord;
+
     @ManyToOne
+    @JoinColumn(name = "tr_id")
     private Translation translation;
+
+    @Column(name = "last_modified")
+    @Temporal(value = TemporalType.DATE)
     private Date lastModifiedDate;
+
+    @Column(name = "date_of_creation")
+    @Temporal(value = TemporalType.DATE)
     private Date dateOfCreation;
+
+    @Column(name = "category")
     private String category;
 
     private TableItem() {
