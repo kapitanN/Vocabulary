@@ -1,5 +1,6 @@
 package app.controllers.word.table;
 
+//import app.entities.table.TableItem;
 import app.entities.table.TableItem;
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;

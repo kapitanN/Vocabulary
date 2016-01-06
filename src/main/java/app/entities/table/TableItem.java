@@ -2,7 +2,6 @@ package app.entities.table;
 
 import app.entities.beans.ForeignWord;
 import app.entities.beans.Translation;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import java.util.Date;
