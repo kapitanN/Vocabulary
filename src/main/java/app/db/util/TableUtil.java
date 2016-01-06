@@ -4,7 +4,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-//import org.hibernate.service.ServiceRegistryBuilder;
 
 /**
  * Vocabulary(v3)
@@ -16,7 +15,6 @@ public class TableUtil {
 
     private static SessionFactory buildSessionFactory() {
         try {
-            // Создает сессию с hibernate.cfg.xml
             Configuration configuration = new Configuration();
             configuration.configure();
             serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
@@ -34,7 +32,6 @@ public class TableUtil {
     }
 
     public static void shutdown() {
-        // Чистит кеш и закрывает соединение с БД
         getSessionFactory().close();
     }
 
