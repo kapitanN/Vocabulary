@@ -4,6 +4,7 @@ import app.entities.beans.ForeignWord;
 import app.entities.beans.Translation;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "unit")
-public class TableItem {
+public class TableItem implements Serializable {
     @Id
     @Column(name = "unit_id")
     @GeneratedValue

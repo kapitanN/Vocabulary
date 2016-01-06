@@ -1,6 +1,7 @@
 package app.entities.beans;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Vocabulary(v3)
@@ -8,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "foreignwords")
-public class ForeignWord {
+public class ForeignWord implements Serializable {
 
     @Id
     @Column(name = "foreign_id")

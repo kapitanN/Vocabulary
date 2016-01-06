@@ -2,6 +2,7 @@ package app.entities.beans;
 
 import javax.annotation.Generated;
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Vocabulary(v3)
@@ -9,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "translations")
-public class Translation {
+public class Translation implements Serializable {
 
     @Id
     @Column(name = "tr_id")
