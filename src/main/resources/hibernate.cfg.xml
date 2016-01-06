@@ -15,5 +15,8 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
         <property name="current_session_context_class">thread</property>
+        <mapping class="app.entities.table.TableItem"></mapping>
+        <mapping class="app.entities.bean.ForeignWord"></mapping>
+        <mapping class="app.entities.bean.Translation"></mapping>
     </session-factory>
 </hibernate-configuration>

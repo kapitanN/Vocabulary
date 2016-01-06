@@ -37,7 +37,31 @@ public class TableItem {
     @Column(name = "category")
     private String category;
 
-    private TableItem() {
+    public TableItem() {
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setForeignWord(ForeignWord foreignWord) {
+        this.foreignWord = foreignWord;
+    }
+
+    public void setTranslation(Translation translation) {
+        this.translation = translation;
+    }
+
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public void setDateOfCreation(Date dateOfCreation) {
+        this.dateOfCreation = dateOfCreation;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public long getId() {
@@ -64,42 +88,42 @@ public class TableItem {
         return category;
     }
 
-    public class Builder {
-        private Builder() {
-        }
-
-        public Builder setId(long id) {
-            TableItem.this.id = id;
-            return this;
-        }
-
-        public Builder setOriginalWord(ForeignWord foreignWord) {
-            TableItem.this.foreignWord = foreignWord;
-            return this;
-        }
-
-        public Builder setTranslatedWord(Translation translation) {
-            TableItem.this.translation = translation;
-            return this;
-        }
-
-        public Builder setLastModifiedDate(Date lastModifiedDate) {
-            TableItem.this.lastModifiedDate = lastModifiedDate;
-            return this;
-        }
-
-        public Builder setDateOfCreation(Date dateOfCreation) {
-            TableItem.this.dateOfCreation = dateOfCreation;
-            return this;
-        }
-
-        public Builder setCategory(String category) {
-            TableItem.this.category = category;
-            return this;
-        }
-
-        public TableItem build() {
-            return TableItem.this;
-        }
-    }
+//    public class Builder {
+//        private Builder() {
+//        }
+//
+//        public Builder setId(long id) {
+//            TableItem.this.id = id;
+//            return this;
+//        }
+//
+//        public Builder setOriginalWord(ForeignWord foreignWord) {
+//            TableItem.this.foreignWord = foreignWord;
+//            return this;
+//        }
+//
+//        public Builder setTranslatedWord(Translation translation) {
+//            TableItem.this.translation = translation;
+//            return this;
+//        }
+//
+//        public Builder setLastModifiedDate(Date lastModifiedDate) {
+//            TableItem.this.lastModifiedDate = lastModifiedDate;
+//            return this;
+//        }
+//
+//        public Builder setDateOfCreation(Date dateOfCreation) {
+//            TableItem.this.dateOfCreation = dateOfCreation;
+//            return this;
+//        }
+//
+//        public Builder setCategory(String category) {
+//            TableItem.this.category = category;
+//            return this;
+//        }
+//
+//        public TableItem build() {
+//            return TableItem.this;
+//        }
+//    }
 }
