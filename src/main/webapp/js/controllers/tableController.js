@@ -1,4 +1,4 @@
-app.factory("TableItem", function($resource){
+app.factory("Word", function($resource){
   return $resource(":language/vocabulary", {language: @language});
 })
 
@@ -51,10 +51,10 @@ app.controller('TableController', ['$scope', '$http' function($scope, $http) {
     // $scope.words.push(item);
     // document.getElementById("originalWord").value = "";
     // document.getElementById("translation").value = "";
-    var tableItem = new TableItem();
-    tableItem.foreign = $scope.foreign;
-    tableItem.translation = $scope.translation;
-    tableItem.$save(url(), function() {
+    var word = new Word();
+    word.foreign = $scope.foreign;
+    word.translation = $scope.translation;
+    word.$save(url(), function() {
       $scope.foreign = "";
       $scope.translation = "";
       update();
