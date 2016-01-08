@@ -1,3 +1,7 @@
+app.factory("TableItem", function($resource){
+  return $resource(":language/vocabulary", {language: @language});
+})
+
 app.controller('TableController', ['$scope', '$http' function($scope, $http) {
   $scope.language = 'English';
   $scope.words = [
@@ -40,17 +44,33 @@ app.controller('TableController', ['$scope', '$http' function($scope, $http) {
   ];
 
   $scope.addWord = function() {
-    var item = {
-      originWord: document.getElementById("originalWord").value,
-      translatedWord: document.getElementById("translation").value
-    }
-    $scope.words.push(item);
-    document.getElementById("originalWord").value = "";
-    document.getElementById("translation").value = "";
+    // var item = {
+    //   originWord: document.getElementById("originalWord").value,
+    //   translatedWord: document.getElementById("translation").value
+    // }
+    // $scope.words.push(item);
+    // document.getElementById("originalWord").value = "";
+    // document.getElementById("translation").value = "";
+    var tableItem = new TableItem();
+    tableItem.foreign = $scope.foreign;
+    tableItem.translation = $scope.translation;
+    tableItem.$save(url(), function() {
+      $scope.foreign = "";
+      $scope.translation = "";
+      update();
+    });
   };
 
   $scope.deleteWord = function(index) {
     var arr = $scope.words.splice(index, 1);
+  };
+
+  var url = function() {
+    return {language: $scope.language||'English'};
+  }
+
+  var update = function() {
+    $scope.words = Word.query(url());
   };
 
 }]);

@@ -1,1 +1,1 @@
-var app = angular.module("VocabularyApp", []);
+var app = angular.module("VocabularyApp", ["ngResource"]);

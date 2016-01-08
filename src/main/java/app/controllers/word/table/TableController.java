@@ -5,6 +5,7 @@ package app.controllers.word.table;
 import app.db.util.TableUtil;
 import app.entities.beans.ForeignWord;
 import app.entities.beans.Translation;
+import app.entities.beans.Word;
 import app.entities.table.TableItem;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
@@ -24,17 +25,17 @@ public class TableController {
     private static final Logger LOG = Logger.getLogger(TableController.class);
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public void addWord(@PathVariable String language, @RequestBody String foreign, @RequestBody String translation) {
+    public void addWord(@PathVariable String language, @RequestBody Word word) {
 
         Session session = TableUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
         ForeignWord foreignWord = new ForeignWord();
-        foreignWord.setWord(foreign);
+        foreignWord.setWord(word.getForeign());
         foreignWord.setLanguage(language);
 
         Translation translationWord = new Translation();
-        translationWord.setWord(translation);
+        translationWord.setWord(word.getTranslation());
         translationWord.setLanguage("Russian");
 
         TableItem item = new TableItem();

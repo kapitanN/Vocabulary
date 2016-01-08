@@ -9,6 +9,7 @@
     <link href="css/custom/vocabulary.css" rel="stylesheet">
 
     <script src="js/angular/angular.min.js"></script>
+    <script src="js/angular/angular-resource.js"></script>
 
     <!-- Modules -->
     <script src="js/app.js"></script>
@@ -63,10 +64,10 @@
       <div id="add-manager" class="add-word-manager min">
         <form>
           <div class="col-xs-7 text-add-word-manager">
-            <input type="text" class="form-control lg-input add-word-text-area" id="originalWord" placeholder="Original Word">
+            <input type="text" class="form-control lg-input add-word-text-area" id="originalWord" placeholder="Original Word" ng-model="foreign">
           </div>
           <div class="col-xs-3 text-add-word-manager">
-            <input type="text" class="form-control lg-input add-word-text-area" id="translation" placeholder="Translation">
+            <input type="text" class="form-control lg-input add-word-text-area" id="translation" placeholder="Translation" ng-model="translation">
           </div>
           <div class="col-xs-2">
             <div class="vocabulary-button">
