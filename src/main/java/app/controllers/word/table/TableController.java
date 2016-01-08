@@ -48,13 +48,14 @@ public class TableController {
         session.save(item);
 
         session.getTransaction().commit();
-        TableUtil.shutdown();
+        session.close();
     }
 
     public boolean deleteWord() {
         throw new NotImplementedException();
     }
 
+    @RequestMapping(method = RequestMethod.GET)
     public TableItem getItem() {
         throw new NotImplementedException();
     }
