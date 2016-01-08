@@ -3,7 +3,9 @@ package app.controllers.word.table;
 //import app.entities.table.TableItem;
 import app.entities.table.TableItem;
 import org.apache.log4j.Logger;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
@@ -18,7 +20,8 @@ import java.util.List;
 public class TableController {
     private static final Logger LOG = Logger.getLogger(TableController.class);
 
-    public boolean addWord() {
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public boolean addWord(@PathVariable String language) {
         throw new NotImplementedException();
     }
 

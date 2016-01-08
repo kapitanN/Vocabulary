@@ -1,4 +1,4 @@
-app.controller('TableController', ['$scope', function($scope) {
+app.controller('TableController', ['$scope', '$http' function($scope, $http) {
   $scope.language = 'English';
   $scope.words = [
   	{
@@ -54,8 +54,3 @@ app.controller('TableController', ['$scope', function($scope) {
   };
 
 }]);
-
-/**
-  Массив слов сортируется только на странице сайта, сам массив остается в старом порядке. 
-  Из-за этого, при удалении из отсортированного словаря, удаляются не те слова.
-*/
