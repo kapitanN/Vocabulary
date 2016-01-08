@@ -1,5 +1,8 @@
 package app.db.util;
 
+import app.entities.beans.ForeignWord;
+import app.entities.beans.Translation;
+import app.entities.table.TableItem;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -16,6 +19,9 @@ public class TableUtil {
     private static SessionFactory buildSessionFactory() {
         try {
             Configuration configuration = new Configuration();
+            configuration.addAnnotatedClass(TableItem.class);
+            configuration.addAnnotatedClass(ForeignWord.class);
+            configuration.addAnnotatedClass(Translation.class);
             configuration.configure();
             serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
 
