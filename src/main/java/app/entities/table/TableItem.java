@@ -12,7 +12,7 @@ import java.util.Date;
  * Created by Родион on 23.11.2015.
  */
 @Entity
-@Table(name = "unit")
+@Table(name = "units")
 public class TableItem implements Serializable {
     @Id
     @Column(name = "unit_id")
