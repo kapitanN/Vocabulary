@@ -1,9 +1,10 @@
 app.factory("Word", function($resource){
-  return $resource(":language/vocabulary", {language: @language});
+  return $resource(":language/vocabulary", {language: '@language'});
 })
 
-app.controller('TableController', ['$scope', '$http' function($scope, $http) {
+app.controller('TableController', ['$scope', "Word", function($scope, Word) {
   $scope.language = 'English';
+  // debugger
   $scope.words = [
   	{
   		originWord: 'car',
@@ -57,7 +58,7 @@ app.controller('TableController', ['$scope', '$http' function($scope, $http) {
     word.$save(url(), function() {
       $scope.foreign = "";
       $scope.translation = "";
-      update();
+      // update();
     });
   };
 

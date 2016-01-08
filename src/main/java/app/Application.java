@@ -23,29 +23,29 @@ import java.util.Date;
 @ComponentScan
 public class Application {
     public static void main(String[] args) {
-        Session session = TableUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-
-        // Add new Employee object
-        ForeignWord foreign = new ForeignWord();
-        foreign.setWord("school");
-        foreign.setLanguage("English");
-
-        Translation translation = new Translation();
-        translation.setWord("школа");
-        translation.setLanguage("Russian");
-
-        TableItem item = new TableItem();
-        item.setForeignWord(foreign);
-        item.setTranslation(translation);
-        item.setCategory("School");
-        item.setDateOfCreation(new Date());
-        item.setLastModifiedDate(new Date());
-
-        session.save(item);
-
-        session.getTransaction().commit();
-        TableUtil.shutdown();
+//        Session session = TableUtil.getSessionFactory().openSession();
+//        session.beginTransaction();
+//
+//        // Add new Employee object
+//        ForeignWord foreign = new ForeignWord();
+//        foreign.setWord("school");
+//        foreign.setLanguage("English");
+//
+//        Translation translation = new Translation();
+//        translation.setWord("школа");
+//        translation.setLanguage("Russian");
+//
+//        TableItem item = new TableItem();
+//        item.setForeignWord(foreign);
+//        item.setTranslation(translation);
+//        item.setCategory("School");
+//        item.setDateOfCreation(new Date());
+//        item.setLastModifiedDate(new Date());
+//
+//        session.save(item);
+//
+//        session.getTransaction().commit();
+//        TableUtil.shutdown();
 
         SpringApplication.run(Application.class, args);
     }
