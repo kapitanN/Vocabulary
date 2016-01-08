@@ -24,7 +24,7 @@ import java.util.List;
 public class TableController {
     private static final Logger LOG = Logger.getLogger(TableController.class);
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public void addWord(@PathVariable String language, @RequestBody Word word) {
 
         Session session = TableUtil.getSessionFactory().openSession();
