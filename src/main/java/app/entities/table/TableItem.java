@@ -19,11 +19,11 @@ public class TableItem implements Serializable {
     @GeneratedValue
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "foreign_id")
     private ForeignWord foreignWord;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "tr_id")
     private Translation translation;
 
