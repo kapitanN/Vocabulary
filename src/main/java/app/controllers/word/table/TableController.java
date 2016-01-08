@@ -12,6 +12,8 @@ import org.hibernate.Session;
 import org.springframework.web.bind.annotation.*;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -56,8 +58,16 @@ public class TableController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public TableItem getItem() {
-        throw new NotImplementedException();
+    public Collection<Word> getItem() {
+        List<Word> words = new ArrayList<Word>();
+
+        Session session = TableUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+
+//        session.
+
+
+        return words;
     }
 
     public List<TableItem> getItems() {
