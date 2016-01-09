@@ -26,6 +26,8 @@ import java.util.List;
 public class TableController {
     private static final Logger LOG = Logger.getLogger(TableController.class);
 
+    private static final String GET_ALL_WORDS = "FROM TableItem";
+
     @RequestMapping(method = RequestMethod.POST)
     public void addWord(@PathVariable String language, @RequestBody Word word) {
 
@@ -59,13 +61,20 @@ public class TableController {
 
     @RequestMapping(method = RequestMethod.GET)
     public Collection<Word> getItem() {
+        List<TableItem> items;
         List<Word> words = new ArrayList<Word>();
 
         Session session = TableUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
-//        session.
-
+        items = session.createQuery(GET_ALL_WORDS).list();
+        session.getTransaction().commit();
+        for (TableItem item : items) {
+            Word temp = new Word();
+            temp.setForeign(item.getOriginalWord().getWord());
+            temp.setTranslation(item.getTranslatedWord().getWord());
+            words.add(temp);
+        }
 
         return words;
     }

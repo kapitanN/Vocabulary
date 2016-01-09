@@ -56,8 +56,8 @@
         </div>
 		    <table class="table table-hover vocabulary">
 			  	<tr class="item-holder" ng-repeat="word in words | filter:query | orderBy:orderProp">
-			  		<td>{{ word.originWord}}</td>
-			  		<td>{{ word.translatedWord }}</td>
+			  		<td>{{ word.foreign}}</td>
+			  		<td>{{ word.translation }}</td>
             <td class="remove-action"><span class="glyphicon glyphicon-remove vocabulary-button-text" aria-hidden="true" ng-click="deleteWord($index)"></span></td>
 			  	</tr>
 			</table>
