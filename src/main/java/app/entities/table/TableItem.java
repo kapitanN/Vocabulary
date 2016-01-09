@@ -88,43 +88,5 @@ public class TableItem implements Serializable {
     public String getCategory() {
         return category;
     }
-
-//    public class Builder {
-//        private Builder() {
-//        }
-//
-//        public Builder setId(long id) {
-//            TableItem.this.id = id;
-//            return this;
-//        }
-//
-//        public Builder setOriginalWord(ForeignWord foreignWord) {
-//            TableItem.this.foreignWord = foreignWord;
-//            return this;
-//        }
-//
-//        public Builder setTranslatedWord(Translation translation) {
-//            TableItem.this.translation = translation;
-//            return this;
-//        }
-//
-//        public Builder setLastModifiedDate(Date lastModifiedDate) {
-//            TableItem.this.lastModifiedDate = lastModifiedDate;
-//            return this;
-//        }
-//
-//        public Builder setDateOfCreation(Date dateOfCreation) {
-//            TableItem.this.dateOfCreation = dateOfCreation;
-//            return this;
-//        }
-//
-//        public Builder setCategory(String category) {
-//            TableItem.this.category = category;
-//            return this;
-//        }
-//
-//        public TableItem build() {
-//            return TableItem.this;
-//        }
-//    }
+    
 }
