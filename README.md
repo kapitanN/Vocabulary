@@ -1,2 +1,2 @@
 # Vocabulary
-VOC
+vocabulary
