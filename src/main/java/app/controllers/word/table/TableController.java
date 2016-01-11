@@ -55,7 +55,9 @@ public class TableController {
         session.close();
     }
 
-    public boolean deleteWord() {
+    @RequestMapping(method = RequestMethod.DELETE)
+    public boolean deleteWord(@RequestBody Word word) {
+
         throw new NotImplementedException();
     }
 
