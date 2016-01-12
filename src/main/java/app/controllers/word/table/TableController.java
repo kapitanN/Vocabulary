@@ -8,6 +8,7 @@ import app.entities.beans.Translation;
 import app.entities.beans.Word;
 import app.entities.table.TableItem;
 import org.apache.log4j.Logger;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.web.bind.annotation.*;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
@@ -27,6 +28,10 @@ public class TableController {
     private static final Logger LOG = Logger.getLogger(TableController.class);
 
     private static final String GET_ALL_WORDS = "FROM TableItem";
+
+    private static final String GET_FOREIGN_WORD_ID = "FROM foreignwords WHERE foreign_word = :foreign_word";
+
+    private static final String REMOVE_WORD_WHERE = "DELETE FROM TableItem WHERE foreign_id = :foreign_id_word";
 
     @RequestMapping(method = RequestMethod.POST)
     public void addWord(@PathVariable String language, @RequestBody Word word) {
@@ -56,9 +61,14 @@ public class TableController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE)
-    public boolean deleteWord(@RequestBody Word word) {
+    public void deleteWord(@PathVariable String language, @RequestBody Word word) {
+        Session session = TableUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        Query query = session.createQuery(GET_FOREIGN_WORD_ID);
+        query.setParameter("foreign_word", word.getForeign());
+        ForeignWord item = (ForeignWord) query.list().get(0);
+        System.out.println(item.toString());
 
-        throw new NotImplementedException();
     }
 
     @RequestMapping(method = RequestMethod.GET)
