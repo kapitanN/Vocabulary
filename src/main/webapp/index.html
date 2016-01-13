@@ -58,7 +58,7 @@
 			  	<tr class="item-holder" ng-repeat="word in words | filter:query | orderBy:orderProp">
 			  		<td>{{ word.foreign}}</td>
 			  		<td>{{ word.translation }}</td>
-            <td class="remove-action"><span class="glyphicon glyphicon-remove vocabulary-button-text" aria-hidden="true" ng-click="deleteWord($index)"></span></td>
+            <td class="remove-action"><span class="glyphicon glyphicon-remove vocabulary-button-text" aria-hidden="true" ng-click="deleteWord()"></span></td>
 			  	</tr>
 			</table>
       <div id="add-manager" class="add-word-manager min">

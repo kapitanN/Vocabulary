@@ -30,7 +30,11 @@ app.controller('TableController', ['$scope', "Word", function($scope, Word) {
 
   };
 
-  $scope.deleteWord = function(index) {
-    var arr = $scope.words.splice(index, 1);
+  $scope.deleteWord = function(e) {
+    var el = e.target;
+    console.log(el);
+    // var arr = $scope.words.splice(index, 1);
+    // var word = new Word();
+    // word.foreign = $scope
   };
 }]);
